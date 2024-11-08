@@ -2,8 +2,13 @@ from web3 import Web3
 import requests
 from colorama import Fore, Style
 import time
+from dotenv import load_dotenv
+import os
 
-RPC_URL = "https://rpc.ankr.com/eth"
+# Load environment variables from the .env file
+load_dotenv()
+
+RPC_URL = os.getenv("RPC_URL")
 
 # Initialize a connection
 w3 = Web3(Web3.HTTPProvider(RPC_URL))
